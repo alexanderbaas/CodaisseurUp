@@ -1,0 +1,19 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #d10000;
+  background-image: url(bckgrfiets);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+img {
+  height: 50px;
+}
+
+.navbar {
+background-color: #d10000;
+border-bottom: 4px solid black;
+}
