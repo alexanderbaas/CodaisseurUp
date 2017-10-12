@@ -30,14 +30,17 @@
     <% end %>
 
     <h4>Photos</h4>
-        <% @event.photos.each do |photo| %>
-          <%= image_tag photo.image %>
-        <% end %>
-
+      <% @event.photos.each do |photo| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= image_tag photo.image.thumbnail %>
+        </div>
+      </div>
+    <% end %>
 
     <!-- Status -->
     <h4>Status</h4>
-    <p><%= !@event.active ? ("<del>Unpiublished</del>").html_safe : "Published" %></p>
+    <p><%= !@event.active ? ("<del>Unpublished</del>").html_safe : "Published" %></p>
   </div>
 
 </div>

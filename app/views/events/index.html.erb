@@ -1,12 +1,12 @@
 <div class="container">
 <div class="row">
   <div class="col-md-3">
-    
+
   </div>
   <div class="col-md-7">
     <div class="panel panel-danger">
       <div class="panel-heading">
-        Your Listings
+        Your Events
         </div>
 
       <div class="panel-body">
@@ -14,7 +14,8 @@
         <div class="row">
           <div class="col-md-7">
             <h4><%= event.name %></h4>
-            </div>
+            <h5><%= time_ago_in_words(event.created_at) %></h5>
+          </div>
             <div class="col-md-3 right">
             <%= link_to "View", event, class: "btn btn-danger" %>
             <%= link_to "Update", edit_event_path(event), class: "btn btn-danger" %>
@@ -23,7 +24,19 @@
         <% end %>
       </div>
     </div>
-    <%= link_to "Add new place", new_event_path, class: "btn btn-danger" %>
-
+    <%= link_to "Add new event", new_event_path, class: "btn btn-danger" %>
   </div>
+</div>
+
+          <div class="container-fluid">
+              <div class="row">
+                <% @events.each do |event| %>
+                  <div class="col-md-3 col-md-offset-1 well">
+                    <h3><%= event.name %></h3>
+                    <h5><%= event.location %></h5>
+                    <h6><%= time_ago_in_words(event.created_at) %></h6>
+                  </div>
+                <% end %>
+              </div>
+            </div>
 </div>
