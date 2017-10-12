@@ -5,7 +5,7 @@ Profile.delete_all
 User.delete_all
 
 miriam = User.create!(
-  email: "miriam@codaisseurup.com",
+  email: "email@email.com",
   password: "abcd1234",
 )
 
@@ -14,7 +14,7 @@ photo2 = Photo.create(remote_image_url: "http://res.cloudinary.com/ajmbaas/image
 photo3 = Photo.create(remote_image_url: "http://res.cloudinary.com/ajmbaas/image/upload/v1507799509/sample.jpg")
 
 event = Event.create!(
-  name: "Monthly Yoga Weekend",
+  name: "Yoga Weekend",
   description: "Let's come together and practice some asanas together in the woods!",
   location: "Amsterdam",
   includes_food: false,
