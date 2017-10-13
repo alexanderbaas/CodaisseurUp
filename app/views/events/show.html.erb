@@ -1,7 +1,7 @@
-
+<div class="container">
 
   <% if current_user != @event.user %>
-    <div class="panel panel-primary">
+    <div class="panel panel-danger">
       <div class="panel-heading">Book this event</div>
 
       <div class="panel-body">
@@ -10,7 +10,7 @@
     </div>
   <% end %>
 
-<div class="container">
+
 <div class="panel panel-danger">
   <div class="panel-heading">
     <h4><%= @event.name %></h4>
