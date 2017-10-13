@@ -6,15 +6,16 @@ describe "Current user viewing the list of events" do
   let(:user) { create :user, email: "current@user.com" }
   let(:another_user) { create :user, email: "another@user.com" }
 
-  let!(:event1) { create :event, listing_name: "Listing Name 1", user: user }
-  let!(:event2) { create :event, listing_name: "Listing Name 2", user: user }
-  let!(:event3) { create :event, listing_name: "Another users event", user: another_user }
+  let!(:event1) { create :event, name: "Event Name 1", user: user }
+  let!(:event2) { create :event, name: "Event Name 2", user: user }
+  let!(:event5) { create :event, name: "Another users event", user: another_user }
 
   it "shows all his events" do
     visit events_url
 
-    expect(page).to have_text("Listing Name 1")
-    expect(page).to have_text("Listing Name 2")
+    expect(page).to have_text("Event Name 1")
+    expect(page).to have_text("Event Name 2")
+    
   end
 
   it "does not show other users events" do
