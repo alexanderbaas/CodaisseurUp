@@ -8,8 +8,16 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:show]
-  resources :events, except: [:destroy]
+
+  resources :events do
+    resources :bookings, only: [:create, :post]
+  end
+
   resources :profiles, only: [:new, :edit, :create, :update]
   resources :photos
-  resources :bookings
+
+  namespace :api do
+    resources :events
+  end
+
 end
